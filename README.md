@@ -10,12 +10,22 @@
 git clone git@github.com:ildar-sabirov/django-jwt-cookie-auth.git
 ```
 
-## Установка зависимостей
+## Настройка переменных среды
+
+- Создайте файл .env в корневой директории проекта.
+
+- Скопируйте содержимое файла .env.example в файл .env.
+
+- Заполните переменные среды в файле .env в соответствии с вашей конфигурацией.
+
+- Теперь то же самое проделываем для директории /backend
+
+## Запуск проекта
 
 Выполните команду:
 
 ```
-pip install -r requirements.txt
+docker-compose up
 ```
 
 ## Применение миграций
@@ -23,9 +33,7 @@ pip install -r requirements.txt
 Выполните команду:
 
 ```
-python manage.py makemigrations
-
-python manage.py migrate
+docker compose exec backend python manage.py migrate 
 ```
 
 ## Эндпойнты
