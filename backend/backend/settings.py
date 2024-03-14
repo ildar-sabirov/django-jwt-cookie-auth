@@ -43,12 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_jwt',
+    'corsheaders',
     'authentication.apps.AuthenticationConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -144,3 +146,7 @@ REST_FRAMEWORK = {
 JWT_AUTH = {
     'JWT_COOKIE_NAME': 'jwt',
 }
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]

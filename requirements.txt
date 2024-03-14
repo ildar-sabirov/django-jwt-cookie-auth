@@ -4,3 +4,4 @@ djangorestframework-jwt==1.11.0
 flake8==7.0.0
 python-dotenv==1.0.1
 psycopg2==2.9.9
+django-cors-headers==4.3.1
