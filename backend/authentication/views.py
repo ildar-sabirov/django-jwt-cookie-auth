@@ -13,6 +13,9 @@ User = get_user_model()
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_view(request):
+    """
+    Регистрация нового пользователя.
+    """
     if request.method == 'POST':
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
@@ -24,6 +27,9 @@ def register_view(request):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login_view(request):
+    """
+    Вход пользователя в систему и выдача JWT токена, сохраняемого в cookie.
+    """
     username = request.data.get('username')
     password = request.data.get('password')
 
@@ -43,6 +49,9 @@ def login_view(request):
 
 @api_view(['POST'])
 def logout_view(request):
+    """
+    Выход пользователя из системы и удаление JWT токена.
+    """
     logout(request)
     response = Response()
     response.delete_cookie('jwt')
