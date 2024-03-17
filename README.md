@@ -1,6 +1,17 @@
-# django-jwt-cookie-auth
+## О проекте:
 
 Аутентификация с использованием JSON Web Token, хранящихся в cookie для безопасной передачи и хранения на стороне клиента.
+
+## Технологии:
+
++ python 3.10
++ Django 3.2.16
++ djangorestframework 3.14.0
++ JSON Web Token Authentication
++ PostgreSQL
++ gunicorn
++ nginx
++ Docker
 
 ## Клонирование проекта
 
@@ -28,12 +39,14 @@ git clone git@github.com:ildar-sabirov/django-jwt-cookie-auth.git
 docker-compose up
 ```
 
-## Применение миграций
+## Применение миграций и сбор статики
 
-Выполните команду:
+Выполните команды:
 
 ```
-docker compose exec backend python manage.py migrate 
+docker compose exec backend python manage.py migrate
+
+docker compose exec backend python manage.py collectstatic
 ```
 
 ## Эндпойнты
@@ -69,4 +82,5 @@ POST `/auth/login/`
 
 POST `/api/logout/`
 
-###
+## Автор:
+Ильдар Сабиров - [ildar-sabirov](https://github.com/ildar-sabirov)
